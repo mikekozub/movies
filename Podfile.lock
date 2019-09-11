@@ -1,0 +1,22 @@
+PODS:
+  - Anchorage (4.3.1)
+  - SDWebImage (5.0.6):
+    - SDWebImage/Core (= 5.0.6)
+  - SDWebImage/Core (5.0.6)
+
+DEPENDENCIES:
+  - Anchorage
+  - SDWebImage
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Anchorage
+    - SDWebImage
+
+SPEC CHECKSUMS:
+  Anchorage: a187da0bc9b07440637d42c8744b8c82a4490295
+  SDWebImage: 920f1a2ff1ca8296ad34f6e0510a1ef1d70ac965
+
+PODFILE CHECKSUM: 0eb3d2da9703f5f6f61952a3bd60466257a17874
+
+COCOAPODS: 1.6.1
