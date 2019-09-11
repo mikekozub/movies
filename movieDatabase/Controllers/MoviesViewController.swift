@@ -10,9 +10,12 @@ import UIKit
 import SDWebImage
 import Anchorage
 
-class MoviesViewController: UIViewController {
-
+class MoviesViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource {
+    
+    var collectionView : UICollectionView!
     var movies = [MovieDataModel]()
+    let cellId = "Cell"
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         loadData()
@@ -34,5 +37,29 @@ class MoviesViewController: UIViewController {
             }
         }
     }
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return movies.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MovieCollectionViewCell
+        
+        let movie = movies[indexPath.item]
+        let prefix = "https://image.tmdb.org/t/p/w500/"
+        let imageUrl = URL(string: prefix + movie.imageUrl! )
+        let movieName = movie.title ?? ""
+        
+        cell.movieName.text = movieName
+        cell.movieImage.sd_setImage(with: imageUrl)
+        
+        return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        let width = ((collectionView.bounds.size.width) / 2) - 4
+        return CGSize(width: width, height: width * 2)
+    }
+    
 }
 
