@@ -58,10 +58,12 @@ class MoviesViewController: UIViewController, UICollectionViewDelegateFlowLayout
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let width = ((collectionView.bounds.size.width) / 2) - 4
-        return CGSize(width: width, height: width * 2)
+        return CGSize(width: width, height: width * 1.7)
     }
     
     func addAndConfigureViews() {
+        self.title = "Now Playing"
+        
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         layout.minimumInteritemSpacing = 8
         layout.minimumLineSpacing = 8

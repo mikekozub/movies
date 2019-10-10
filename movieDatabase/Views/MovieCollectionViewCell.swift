@@ -27,7 +27,7 @@ class MovieCollectionViewCell: UICollectionViewCell {
         background.topAnchor == self.topAnchor
         background.bottomAnchor == self.bottomAnchor
         background.horizontalAnchors == self.horizontalAnchors
-        background.backgroundColor = #colorLiteral(red: 0.2392156869, green: 0.6745098233, blue: 0.9686274529, alpha: 1)
+        background.backgroundColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         background.layer.borderColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
         background.layer.borderWidth = 1
         background.layer.cornerRadius = 5.0
@@ -36,17 +36,16 @@ class MovieCollectionViewCell: UICollectionViewCell {
         self.addSubview(image)
         image.topAnchor == background.topAnchor + 6
         image.bottomAnchor == background.bottomAnchor - 20
-        image.horizontalAnchors == horizontalAnchors
+        image.horizontalAnchors == background.horizontalAnchors + 5
         image.contentMode = .scaleAspectFit
         
         let title = movieName
         self.addSubview(title)
-        title.horizontalAnchors == background.horizontalAnchors
-        title.bottomAnchor == background.bottomAnchor - 1
+        title.horizontalAnchors == background.horizontalAnchors + 5
+        title.bottomAnchor == background.bottomAnchor - 5
         title.centerXAnchor == background.centerXAnchor
         title.numberOfLines = 0
-        title.textColor = .purple
-        title.backgroundColor = .yellow
+        title.textColor = .white
         title.adjustsFontSizeToFitWidth = true
         title.textAlignment = .center
         
